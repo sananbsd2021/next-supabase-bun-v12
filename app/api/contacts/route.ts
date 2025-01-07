@@ -31,7 +31,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       const { data: contact, error } = await supabase
         .from('contact')
         .select('*')
-        .order('created_at', { ascending: false })
+        .order('createdAt', { ascending: false })
         .range(start, start + limit - 1);
   
       if (error) {
